@@ -85,3 +85,5 @@ echo "STEP 12"
 rm /etc/apache2/sites-available/000-default.conf
 wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/apache-config -O /etc/apache2/sites-available/000-default.conf
 service apache2 restart
+
+echo "LOGIN: /adminlogin User: adminuser Pass: admin123@"
