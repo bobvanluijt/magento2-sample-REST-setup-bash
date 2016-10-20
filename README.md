@@ -12,3 +12,5 @@ _Note: not for production, just for testing ;-)_
 $ sudo su
 $ cd ~ && wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/install.sh && chmod +x install.sh && ./install.sh
 ```
+
+Tested on Ubuntu 16.04 LTS
