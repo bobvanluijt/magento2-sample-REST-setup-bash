@@ -92,7 +92,7 @@ echo "STEP 12"
 echo "STEP 13"
 rm /etc/apache2/sites-available/000-default.conf
 wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/apache-config -O /etc/apache2/sites-available/000-default.conf
-sed -i "s/[[UPDATE_TO_WEBSITE]]/${BASEURL}/g" /etc/apache2/sites-available/000-default.conf
+sed -i "s/UPDATE_TO_WEBSITE/${BASEURL}/g" /etc/apache2/sites-available/000-default.conf
 
 echo "STEP 14"
 letsencrypt --apache
