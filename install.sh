@@ -85,6 +85,7 @@ unzip master.zip
 rm master.zip
 mv Magento2-extension-master/Disabled-frontend ./
 rm -r Magento2-extension-master/
+php -f /var/www/magento2/bin/magento setup:upgrade
 
 echo "STEP 12"
 /var/www/magento2/bin/magento cache:clean
