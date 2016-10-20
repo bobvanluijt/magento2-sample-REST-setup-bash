@@ -20,7 +20,7 @@ DBPASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
 echo "STEP 1"
 apt-get -qq update
-apt-get -qq -y install mysql-server mysql-client apache2 libapache2-mod-fastcgi mysql-server php libapache2-mod-php mysql-server php-mysql php-dom php-simplexml php-curl php-intl php7.0-gd php7.0-mcrypt php-xsl php-mbstring php-zip php-xml composer
+apt-get -qq -y install mysql-server mysql-client apache2 libapache2-mod-fastcgi mysql-server php libapache2-mod-php mysql-server php-mysql php-dom php-simplexml php-curl php-intl php7.0-gd php7.0-mcrypt php-xsl php-mbstring php-zip php-xml composer python-letsencrypt-apache
 apt install -y mcrypt
 a2enmod rewrite
 service mysql restart
@@ -85,6 +85,12 @@ echo "STEP 12"
 rm /etc/apache2/sites-available/000-default.conf
 wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/apache-config -O /etc/apache2/sites-available/000-default.conf
 sed -i "s/[[UPDATE_TO_WEBSITE]]/${BASEURL}/g" /etc/apache2/sites-available/000-default.conf
+
+echo "STEP 13"
+letsencrypt --apache
+letsencrypt renew --dry-run --agree-tos
+
+echo "STEP 14
 service apache2 restart
 
 echo "LOGIN: /adminlogin User: adminuser Pass: admin123@"
