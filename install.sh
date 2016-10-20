@@ -79,13 +79,14 @@ echo "STEP 10"
 mysql -u ${DBUSER} -p${DBPASS} -e 'USE magentodb; REPLACE INTO core_config_data (path, value) VALUES("webapi/webapisecurity/allow_insecure", 1);'
 
 echo "STEP 11"
-#cd /var/www/magento2/app/code/Magento
-#wget https://github.com/dorel/Magento2-extension/archive/master.zip
-#unzip master.zip
-#rm master.zip
-#mv Magento2-extension-master/Disabled-frontend ./
-#rm -r Magento2-extension-master/
-#php -f /var/www/magento2/bin/magento setup:upgrade
+cd /var/www/magento2/app/code/Magento
+wget https://github.com/dorel/Magento2-extension/archive/master.zip
+unzip master.zip
+rm master.zip
+mv Magento2-extension-master/Disabled-frontend ./
+rm -r Magento2-extension-master/
+php -f /var/www/magento2/bin/magento setup:upgrade
+php -f /var/www/magento2/bin/magento setup:di:compile
 
 echo "STEP 12"
 /var/www/magento2/bin/magento cache:clean
