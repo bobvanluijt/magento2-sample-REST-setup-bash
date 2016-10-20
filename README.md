@@ -8,5 +8,7 @@ _Note: not for production, just for testing ;-)_
 
 ## Simple usage
 
-`$ sudo su`
-`$ cd ~ && wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/install.sh && chmod +x install.sh && ./install.sh`
+```
+$ sudo su
+$ cd ~ && wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/install.sh && chmod +x install.sh && ./install.sh
+```
