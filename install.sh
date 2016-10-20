@@ -7,6 +7,12 @@
 MAGEVSERION=2.1.2
 BASEURL=[someURL]
 
+# Run the script as root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
 ##
 # Don't edit underneath this line
 ##
@@ -75,4 +81,6 @@ echo "STEP 11"
 /var/www/magento2/bin/magento cache:flush
 
 echo "STEP 12"
+rm /etc/apache2/sites-available/000-default.conf
+wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/apache-config -O /etc/apache2/sites-available/000-default.conf
 service apache2 restart
