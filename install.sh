@@ -87,6 +87,9 @@ mv Magento2-extension-master/Disabled-frontend ./
 rm -r Magento2-extension-master/
 php -f /var/www/magento2/bin/magento setup:upgrade
 php -f /var/www/magento2/bin/magento setup:di:compile
+cd /var/www/magento2
+find ./var -type d -exec chmod 777 {} \;
+find ./var -type f -exec chmod 777 {} \;
 
 echo "STEP 12"
 /var/www/magento2/bin/magento cache:clean
