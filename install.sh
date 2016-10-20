@@ -20,7 +20,7 @@ DBPASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
 echo "STEP 1"
 apt-get -qq update
-apt-get -qq -y install mysql-server mysql-client apache2 libapache2-mod-fastcgi mysql-server php libapache2-mod-php mysql-server php-mysql php-dom php-simplexml php-curl php-intl php7.0-gd php7.0-mcrypt php-xsl php-mbstring php-zip php-xml php7.0-fpm php7.0-cli php7.0-common php7.0-json php7.0-opcache php7.0-mysql php7.0-phpdbg php7.0-gd php7.0-imap php7.0-ldap php7.0-pgsql php7.0-pspell php7.0-recode php7.0-snmp php7.0-tidy php7.0-dev php7.0-intl php7.0-gd php7.0-curl composer python-letsencrypt-apache unzip
+apt-get -qq -y install mysql-server mysql-client apache2 libapache2-mod-fastcgi mysql-server php libapache2-mod-php mysql-server php-mysql php-dom php-simplexml php-curl php-intl php7.0-gd php7.0-mcrypt php-xsl php-mbstring php-zip php-xml composer python-letsencrypt-apache unzip
 apt install -y mcrypt
 a2enmod rewrite
 service php7.0-fpm restart
