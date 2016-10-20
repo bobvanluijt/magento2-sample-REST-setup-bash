@@ -19,8 +19,7 @@
     FastCgiExternalServer /usr/lib/cgi-bin/php5-fcgi -host 127.0.0.1:9000 -pass-header Authorization
   </IfModule>
 
-  ServerName localhost
-  ServerAlias www.localhost
+  ServerName [[UPDATE_TO_WEBSITE]]
   DocumentRoot /var/www/magento2/pub
 
 </VirtualHost>
