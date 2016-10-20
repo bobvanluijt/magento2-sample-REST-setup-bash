@@ -60,6 +60,8 @@ echo "STEP 8"
 cd /var/www/magento2
 find . -type f -exec chmod 644 {} \;
 find . -type d -exec chmod 755 {} \;
+find ./var -type d -exec chmod 777 {} \;
+find ./var -type f -exec chmod 777 {} \;
 find ./pub/media -type d -exec chmod 777 {} \;
 find ./pub/static -type d -exec chmod 777 {} \;
 chmod 777 ./app/etc
