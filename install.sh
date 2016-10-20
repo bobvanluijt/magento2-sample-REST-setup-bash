@@ -3,9 +3,8 @@
 ##
 # SET PASSWORD FOR MYSQL IN MAGENTO INSTALL ALSO SET BASE URL
 ##
-
-MAGEVSERION=2.1.2
-BASEURL=[someURL]
+read -e -p "Enter Your Name:" -i "2.1.2" MAGEVSERION
+read -e -p "Enter Your Name:" -i "localhost" BASEURL
 
 # Run the script as root
 if [ "$EUID" -ne 0 ]
