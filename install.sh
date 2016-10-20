@@ -3,8 +3,8 @@
 ##
 # SET PASSWORD FOR MYSQL IN MAGENTO INSTALL ALSO SET BASE URL
 ##
-read -e -p "Enter Magento 2 Versions:" -i "2.1.2" MAGEVSERION
-read -e -p "Enter the base url (without http(s)://):" -i "localhost" BASEURL
+read -e -p "Enter Magento 2 Versions: " -i "2.1.2" MAGEVSERION
+read -e -p "Enter the base url (without http(s)://): " -i "localhost" BASEURL
 
 # Run the script as root
 if [ "$EUID" -ne 0 ]
