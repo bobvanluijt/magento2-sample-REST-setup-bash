@@ -13,4 +13,6 @@ $ sudo su
 $ cd ~ && wget https://raw.githubusercontent.com/bobvanluijt/magento2-sample-REST-setup-bash/master/install.sh && chmod +x install.sh && ./install.sh
 ```
 
-Tested on Ubuntu 16.04 LTS
+Notes:
+- Tested on Ubuntu 16.04 LTS
+- It assumes that the domainname DNS is set (because of letsencrypt)
