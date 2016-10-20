@@ -60,8 +60,6 @@ echo "STEP 8"
 cd /var/www/magento2
 find . -type f -exec chmod 644 {} \;
 find . -type d -exec chmod 755 {} \;
-find ./var -type d -exec chmod 777 {} \;
-find ./var -type f -exec chmod 777 {} \;
 find ./pub/media -type d -exec chmod 777 {} \;
 find ./pub/static -type d -exec chmod 777 {} \;
 chmod 777 ./app/etc
@@ -71,6 +69,8 @@ chmod u+x bin/magento
 echo "STEP 9"
 /var/www/magento2/bin/magento setup:install --backend-frontname="adminlogin" --db-host="127.0.0.1" --db-name="magentodb" --db-user="${DBUSER}" --db-password="${DBPASS}" --language="en_US" --currency="USD" --timezone="America/New_York" --use-rewrites=1 --use-secure=0 --base-url="http://${BASEURL}" --base-url-secure="https://${BASEURL}" --admin-user=adminuser --admin-password=admin123@ --admin-email=admin@newmagento.com --admin-firstname=admin --admin-lastname=user --cleanup-database
 cd /var/www/magento2
+find ./var -type d -exec chmod 777 {} \;
+find ./var -type f -exec chmod 777 {} \;
 
 echo "STEP 10"
 mysql -u ${DBUSER} -p${DBPASS} -e 'USE magentodb; REPLACE INTO core_config_data (path, value) VALUES("webapi/webapisecurity/allow_insecure", 1);'
