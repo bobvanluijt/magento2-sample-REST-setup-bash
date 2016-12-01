@@ -77,6 +77,8 @@ find ./var -type f -exec chmod 777 {} \;
 
 echo "STEP 10"
 mysql -u ${DBUSER} -p${DBPASS} -e 'USE magentodb; REPLACE INTO core_config_data (path, value) VALUES("webapi/webapisecurity/allow_insecure", 1);'
+mysql -u ${DBUSER} -p${DBPASS} -e 'USE magentodb; REPLACE INTO core_config_data (path, value) VALUES("web/secure/use_in_frontend", 0);'
+mysql -u ${DBUSER} -p${DBPASS} -e 'USE magentodb; REPLACE INTO core_config_data (path, value) VALUES("web/secure/use_in_adminhtml", 0);'
 
 echo "STEP 11"
 cd /var/www/magento2/app/code/Magento
