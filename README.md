@@ -4,6 +4,8 @@ Bash script to setup Magento 2 + sample data + enabled REST API setup
 
 Exec this script to setup Magento with a REST API enabled.
 
+_Note: When the scripts asks for password, it would be for mysql's root user_
+
 _Note: not for production, just for testing ;-)_
 
 ## Simple usage
